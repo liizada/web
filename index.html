@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil LiiZada</title>
+    <style>
+        /* --- 1. PENGATURAN UMUM (CSS VARIABLES) --- */
+        :root {
+            --bg-color: #f0f4f8; /* Putih keabu-abuan */
+            --text-color: #1a202c; /* Hitam pudar */
+            --primary-neon: #00bcd4; /* Cyan terang */
+            --secondary-neon: #ff00ff; /* Pink neon */
+            --glass: rgba(255, 255, 255, 0.7);
+            --font-main: 'Courier New', Courier, monospace; /* Font ala koding */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            overflow-x: hidden;
+            /* Membuat pola grid background ala cyber */
+            background-image: 
+                linear-gradient(rgba(0, 188, 212, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 188, 212, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* --- 2. CONTAINER UTAMA --- */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        /* --- 3. PROFIL CARD (KOTAK UTAMA) --- */
+        .cyber-card {
+            background: var(--glass);
+            border: 2px solid var(--primary-neon);
+            padding: 3rem;
+            position: relative;
+            box-shadow: 10px 10px 0px rgba(0, 188, 212, 0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 8px; /* Sedikit melengkung */
+            width: 100%;
+        }
+
+        /* Hiasan sudut kotak */
+        .cyber-card::before {
+            content: '';
+            position: absolute;
+            top: -5px; left: -5px;
+            width: 20px; height: 20px;
+            border-top: 4px solid var(--secondary-neon);
+            border-left: 4px solid var(--secondary-neon);
+        }
+        .cyber-card::after {
+            content: '';
+            position: absolute;
+            bottom: -5px; right: -5px;
+            width: 20px; height: 20px;
+            border-bottom: 4px solid var(--secondary-neon);
+            border-right: 4px solid var(--secondary-neon);
+        }
+
+        /* --- 4. TYPOGRAPHY & EFEK --- */
+        h1 {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        /* Efek garis bawah tebal */
+        h1 span {
+            background: linear-gradient(120deg, transparent 0%, var(--primary-neon) 100%);
+            padding-right: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--secondary-neon);
+            margin-bottom: 2rem;
+            display: inline-block;
+            background: #fff;
+            padding: 5px 10px;
+            border: 1px solid var(--secondary-neon);
+        }
+
+        .bio {
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            max-width: 600px;
+        }
+
+        /* --- 5. TOMBOL KEREN --- */
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .cyber-btn {
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            position: relative;
+            cursor: pointer;
+            border: 2px solid var(--text-color);
+            background: transparent;
+            color: var(--text-color);
+        }
+
+        .cyber-btn:hover {
+            background: var(--text-color);
+            color: white;
+            box-shadow: 0 0 15px var(--primary-neon);
+            border-color: transparent;
+        }
+
+        .cyber-btn.neon {
+            border-color: var(--secondary-neon);
+            color: var(--secondary-neon);
+        }
+        
+        .cyber-btn.neon:hover {
+            background: var(--secondary-neon);
+            color: white;
+            box-shadow: 0 0 20px var(--secondary-neon);
+        }
+
+        /* --- 6. BAGIAN STATS (ALAT UKUR) --- */
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+            border-top: 1px dashed var(--text-color);
+            padding-top: 1rem;
+        }
+        
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--primary-neon);
+        }
+        
+        .stat-item p {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        /* Tampilan Mobile */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .stats { flex-direction: column; gap: 1rem; }
+            .btn-group { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="cyber-card">
+            <div class="subtitle">SISWA SMA 1 BABELAN</div>
+
+            <h1>Halo, Saya <span>[Firli Tri Saputra]</span></h1>
+
+            <p id="typing-text" class="bio"></p>
+
+            <div class="btn-group">
+                <a href="store.html" class="cyber-btn">store</a>
+                <a href="beranda.html" class="cyber-btn neon">Kontak Saya</a>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <h3>LVL. 15</h3>
+                    <p>Usia / Level</p>
+                </div>
+                <div class="stat-item">
+                    <h3>SMA</h3>
+                    <p>Base Camp</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Semangat Belajar</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- SCRIPT UNTUK EFEK MENGETIK ---
+        
+        // Ganti teks di dalam tanda kutip ini dengan perkenalanmu sendiri
+        const textToType = "Saya adalah seorang siswa SMA yang hobi ngoding, desain, dan main game. Mencoba membangun masa depan digital yang cerah dengan satu baris kode setiap harinya. Salam kenal!";
+        
+        const typingElement = document.getElementById('typing-text');
+        let index = 0;
+
+        function typeWriter() {
+            if (index < textToType.length) {
+                typingElement.innerHTML += textToType.charAt(index);
+                index++;
+                setTimeout(typeWriter, 50); // Kecepatan mengetik (semakin kecil semakin cepat)
+            } else {
+                // Menambahkan kursor berkedip setelah selesai mengetik
+                typingElement.innerHTML += '<span style="animation: blink 1s infinite">|</span>';
+            }
+        }
+
+        // Jalankan fungsi saat halaman dimuat
+        window.onload = typeWriter;
+
+        // CSS tambahan untuk kursor berkedip lewat JS
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes blink {
+                0% { opacity: 0; }
+                50% { opacity: 1; }
+                100% { opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+  </html>
+          
