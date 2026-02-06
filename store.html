@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Store - Jual Beli Masa Depan</title>
+    <style>
+        /* --- 1. VARIABEL TEMA (Sama dengan sebelumnya) --- */
+        :root {
+            --bg-color: #f0f4f8;
+            --text-color: #1a202c;
+            --primary-neon: #00bcd4; /* Cyan */
+            --secondary-neon: #ff00ff; /* Pink */
+            --glass: rgba(255, 255, 255, 0.85);
+            --font-main: 'Courier New', Courier, monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            /* Pola Grid Background */
+            background-image: 
+                linear-gradient(rgba(0, 188, 212, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 188, 212, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* --- 2. HEADER / NAVIGASI --- */
+        header {
+            background: var(--glass);
+            padding: 1rem 2rem;
+            border-bottom: 2px solid var(--primary-neon);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-color);
+            text-transform: uppercase;
+        }
+        .logo span { color: var(--secondary-neon); }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: bold;
+            border: 1px solid var(--text-color);
+            padding: 5px 15px;
+            transition: 0.3s;
+        }
+        .nav-link:hover {
+            background: var(--text-color);
+            color: #fff;
+        }
+
+        /* --- 3. JUDUL HALAMAN --- */
+        .shop-title {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        .shop-title h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+        }
+        .shop-title p { color: #666; }
+
+        /* --- 4. GRID PRODUK (KATALOG) --- */
+        .product-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px 50px 20px;
+            display: grid;
+            /* Membuat kolom otomatis menyesuaikan layar (Responsive) */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Kartu Produk */
+        .product-card {
+            background: var(--glass);
+            border: 1px solid var(--primary-neon);
+            padding: 1rem;
+            transition: 0.3s;
+            position: relative;
+            box-shadow: 5px 5px 0px rgba(0, 188, 212, 0.1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 10px 10px 0px rgba(255, 0, 255, 0.2);
+            border-color: var(--secondary-neon);
+        }
+
+        /* Area Gambar (Placeholder abu-abu) */
+        .img-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            border: 1px dashed #999;
+            color: #666;
+            font-size: 0.8rem;
+        }
+        
+        /* Jika nanti pakai gambar asli, ganti style img-placeholder */
+        img.product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .product-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 1rem;
+            height: 40px; /* Batasi tinggi deskripsi */
+            overflow: hidden;
+        }
+
+        .price-tag {
+            font-size: 1.3rem;
+            color: var(--secondary-neon);
+            font-weight: bold;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* Tombol Beli *//* --- GANTI BAGIAN .buy-btn DENGAN INI --- */
+.buy-btn {
+    display: block;             /* Agar mengisi lebar kotak */
+    width: 100%;
+    padding: 12px 0;           /* Padding atas bawah */
+    margin-top: 10px;
+    background: transparent;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    font-weight: bold;
+    text-decoration: none;      /* Hilangkan garis bawah link */
+    text-align: center;         /* Tulisan di tengah */
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.buy-btn:hover {
+    background: var(--primary-neon);
+    color: white;
+    border-color: var(--primary-neon);
+    box-shadow: 0 0 10px var(--primary-neon);
+}
+
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">LiiZada_<span>STORE</span></div>
+        <a href="index.html" class="nav-link">HOME / PROFIL</a>
+    </header>
+
+    <div class="shop-title">
+        <h1>Catalog_Item</h1>
+        <p>> Silahkan</p>
+    </div>
+
+        <div class="product-container">
+
+        <div class="product-card">
+            <img src="images.jpeg" class="product-img" alt="Produk 1">
+            <div class="product-name">Kacamata</div>
+            <div class="product-desc">Kacamata Chrome Hearts.</div>
+            <span class="price-tag">Rp 85.000</span>
+            
+            <a href="https://shopee.co.id/LINK_PRODUK_KAMU" class="buy-btn" target="_blank">
+                [+] LIHAT DI SHOPEE
+            </a>
+        </div>
+
+        <div class="product-card">
+            <img src="cincin.jpeg" class="product-img" alt="Produk 2">
+            <div class="product-name">Cincin</div>
+            <div class="product-desc">Cincin Chrome Hearts</div>
+            <span class="price-tag">Rp 75.000</span>
+            
+            <a href="https://www.tiktok.com/@USERNAME/video/..." class="buy-btn" target="_blank">
+                [+] CHECKOUT TIKTOK
+            </a>
+        </div>
+
+        <div class="product-card">
+            <img src="coding.jpeg" class="product-img" alt="Produk 3">
+            <div class="product-name">Jasa Desain Web</div>
+            <div class="product-desc">Pembuatan landing page sederhana tema modern.</div>
+            <span class="price-tag">Rp 150.000</span>
+            
+            <a href="https://wa.me//6285779806838" class="buy-btn" target="_blank">
+                [+] ORDER JASA
+            </a>
+        </div>
+
+    </div>
+
+
+        
+        </div>
+
+    </div>
+
+    
+
+</body>
+  </html>
+  
